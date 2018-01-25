@@ -32,3 +32,11 @@ exports.error = function(request, response) {
     response.end();
     
 }
+
+exports.show = function(require, response) {
+    
+    var file = fs.createReadStream('./test.png');
+    response.writeHead(200, {"Content-Type": "image/png"});
+    file.pipe(response);
+    
+}
