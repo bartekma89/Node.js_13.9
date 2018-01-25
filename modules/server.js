@@ -8,7 +8,7 @@ function start() {
     function onRequest(request, response) {
         
         console.log('Obebrano zapytanie'.blue);
-        console.log('Zapytanie ' + request.url + " odebrane");
+        console.log('Zapytanie ' + request.url + " odebrane".red);
         
         response.writeHead(200, {"Content-Type": "text/plain; charset=utf-8"})
         
@@ -20,6 +20,7 @@ function start() {
             case '/upload':
                 handlers.upload(request, response);
                 break;
+            
             default:
                 handlers.error(request, response);
         }
